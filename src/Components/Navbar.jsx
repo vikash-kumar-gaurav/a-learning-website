@@ -1,6 +1,7 @@
 import React from 'react';
 import weblogo from '../Components/logo.png'
 import { Link } from 'react-router-dom';
+import '../Style.css'
 
 const Navbar = (props) => {
 

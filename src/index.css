@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: a;
+  src: url(./Components/NeueMachina-Light_gwWCZxVuQl.ttf);
+}
+@font-face {
+  font-family: b;
+  src: url(./Components/NeueMachina-Regular_DQCmjH1st.ttf);
+}
+body{
+  height: 100vh;
+  width: 100%;
+  
+
+}
+.box{
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(to right,#26B6E8, #63A541, #236133 );
+  gap: 5vw;
+  
+}
+h1{
+  font-size: 5vw;
+  color: white;
+}

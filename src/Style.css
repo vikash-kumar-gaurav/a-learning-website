@@ -1,0 +1,15 @@
+li :hover{
+    color: white;
+    
+}
+body{
+    background: linear-gradient(-120deg, #ED6B06, #6D1348, #008B5D, #364395);
+}
+button{
+    width: 700px;
+    width: 70px;
+    background-color: black;
+    color: white;
+    border-radius: 30px;
+    border: 2px solid white;
+}

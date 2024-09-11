@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from './Components/Navbar'
 import { Routes,Route } from 'react-router-dom'
 import Signup from './Pages/Signup';
@@ -6,10 +6,13 @@ import Login from './Pages/Login';
 import Dashboard from './Pages/Dashboard';
 import Home from './Pages/Home'
 
+
 const App = () => {
+
+  const [isLogedin, setisLogedin] = useState(true);
   return (
     <>
-    <Navbar />
+    <Navbar isLogedin={isLogedin} setisLogedin={setisLogedin} />
 
     <Routes>
       <Route path='/' element={<Home />} />;

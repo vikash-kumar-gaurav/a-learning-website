@@ -1,39 +1,6 @@
 li :hover{
     color: white;
-    
 }
 body{
     background: linear-gradient(-120deg, #ED6B06, #6D1348, #008B5D, #364395);
-}
-.button{
-   height: 30px;
-   width: 80px;
-   border: 1px solid rgb(0, 0, 0);
-   margin: 10px 0;
-}
-.button:hover{
-    border: 1px solid white;
-    transform: translateY(12px);
-    transition-duration: 1s;
-}
-.form{
-    height: auto;
-    width: 700px;
-    padding: 1rem;
-    background-color: rgb(22, 168, 176);
-    max-width: 700px;
-    margin: auto;
-}
-.input{
-    height: 20px;
-    width: auto;
-    padding: 2px 6px;
-    margin: 0 15px;
-    border: 1px solid transparent;
-    /* box-shadow: -2px -2px 5px white; */
-    outline: none;
-    border-radius: 4px;
-}
-.data{
-    margin-left: 20px;
 }

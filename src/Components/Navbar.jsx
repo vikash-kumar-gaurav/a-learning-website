@@ -7,6 +7,10 @@ const Navbar = (props) => {
 
     let isLogedin = props.isLogedin;
     let setLogedin = props.setLogedin
+
+    const handleClick = () =>{
+        setLogedin(!isLogedin)
+    }
   return (
     <div className="navbar flex justify-between items-center w-full bg-neutral-700 h-[10vh]">
         
@@ -18,26 +22,26 @@ const Navbar = (props) => {
                 <Link to='/' >Home</Link>
             </li>
             <li>
-                <Link to='/' >About</Link>
+                <Link to='/about' >About</Link>
             </li>
             <li>
-                <Link to='/' >Contact</Link>
+                <Link to='/contact' >Contact</Link>
             </li>
         </ul>
         </nav>
-        {/* //login,signup,dashboard,logout */}
-        <div className='m-10 w-[25vw]'>
+        
+        <div className='m-10 w-[25vw] '>
             { !isLogedin &&
-                <Link to="/login"><button className=''>Login</button></Link>
+                <Link to="/login"><button onClick={handleClick} className='border-4  border-b-orange-600 border-double bg-black text-white w-auto rounded-lg p-3 m-5'>Login</button ></Link>
             }
             { !isLogedin &&
-                <Link to="/signup"><button>Signup</button></Link>
+                <Link to="/signup"><button onClick={handleClick} className='border-4  border-b-orange-600 border-double bg-black text-white w-auto rounded-lg p-3'>Signup</button></Link>
             }
             { isLogedin &&
-                <Link to="/"><button>Logout</button></Link>
+                <Link to="/"><button onClick={handleClick} className='border-4  border-b-orange-600 border-double bg-black text-white w-auto rounded-lg p-3 m-5'>Logout</button></Link>
             }
             { isLogedin &&
-                <Link to="/dashboard"><button>Dashboard</button></Link>
+                <Link to="/dashboard"><button onClick={handleClick} className='border-4  border-b-orange-600 border-double bg-black text-white w-auto rounded-lg p-3'>Dashboard</button></Link>
             }
         </div>
     </div>

@@ -43,7 +43,7 @@ const SignupForm = () => {
 
             <div>
             <label >
-                <p>Password<sup>*</sup></p>
+                <p>Create Password<sup>*</sup></p>
                 <input type={showPassword ? 'text' : 'password'} required name='password' value={formData.password} onChange={changeHandler} placeholder='Enter your password' />
                 <span onClick={()=> setShowPsssword((prev)=> !prev)}>
                     {showPassword ? (<AiOutlineEye />) : (<AiOutlineEyeInvisible />) }
@@ -51,7 +51,7 @@ const SignupForm = () => {
             </label>
 
             <label >
-                <p>Conform Password<sup>*</sup></p>
+                <p>Confirm Password<sup>*</sup></p>
                 <input type={showPassword ? 'text' : 'password'} required name='conformpassword' value={formData.conformpassword} onChange={changeHandler} placeholder='Enter your password again' />
                 <span onClick={()=> setShowPsssword((prev)=> !prev)}>
                     {showPassword ? (<AiOutlineEye />) : (<AiOutlineEyeInvisible />) }

@@ -1,8 +1,19 @@
 import React from 'react'
+import signupImg from '../Components/signupImg.avif';
+import Template from '../Components/Template';
 
-const Signup = () => {
+const Signup = ({setisLogedin}) => {
   return (
-    <div>Signup</div>
+    <>
+    <Template 
+      title="welcome Back"
+      desc1="Build skills for today, tomorrow, and beyond"
+      desc2="Education to future-proof your career."
+      image={signupImg}
+      formType="signup"
+      setisLogedin={setisLogedin}
+      />
+    </>
   )
 }
 

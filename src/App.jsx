@@ -6,13 +6,12 @@ import Login from './Pages/Login';
 import Dashboard from './Pages/Dashboard';
 import Home from './Pages/Home'
 import './Style.css'
-import LoginForm from './Forms/LoginForm';
-import SignupForm from './Forms/SignupForm';
+
 
 
 const App = () => {
 
-  const [isLogedin, setisLogedin] = useState(true);
+  const [isLogedin, setisLogedin] = useState(false);
   
   return (
     <>
@@ -21,13 +20,12 @@ const App = () => {
     <Routes>
       <Route path='/' element={<Home />} />;
       <Route path='/dashboard' element={<Dashboard />} />;
-      <Route path='/login' element={<Login />} />;
+      <Route path='/login' element={<Login isLogedin={isLogedin} setisLogedin={setisLogedin} />} />;
       <Route path='/signup' element={<Signup />} />
 
 
     </Routes>
-    <LoginForm />
-    <SignupForm />
+    
     
     </>
   )

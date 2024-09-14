@@ -3,13 +3,13 @@ import weblogo from '../Components/logo.png'
 import { Link } from 'react-router-dom';
 import '../Style.css'
 
-const Navbar = (props) => {
+const Navbar = ({isLogedin, setLogedin}) => {
 
-    let isLogedin = props.isLogedin;
-    let setLogedin = props.setLogedin
+    // let isLogedin = props.isLogedin;
+    // let setLogedin = props.setLogedin
 
     const handleClick = () =>{
-        setLogedin(!isLogedin)
+        setLogedin((prev)=>!prev);
     }
   return (
     <div className="navbar flex justify-between items-center w-full bg-neutral-700 h-[10vh]">

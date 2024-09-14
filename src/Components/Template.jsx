@@ -1,6 +1,9 @@
 import React from 'react'
+import SignupForm from '../Forms/SignupForm'
+import LoginForm from '../Forms/LoginForm'
 
-const Template = ({title, desc1, desc2, image, formattype, setisLogedin}) => {
+
+const Template = ({title, desc1, desc2, image, formType, setisLogedin}) => {
   return (
     <div>
         <div>
@@ -9,9 +12,9 @@ const Template = ({title, desc1, desc2, image, formattype, setisLogedin}) => {
                 <span>{desc1}</span>
                 <span>{desc2}</span>
             </p>
-            {formattype ==="signup" ?
-            (<SignupForm />) :
-            (<LoginForm />)
+            {formType ==="signup" ?
+            (<SignupForm setisLogedin={setisLogedin}/>) :
+            (<LoginForm setisLogedin = {setisLogedin}/>)
             }
 
             <div>
@@ -23,7 +26,7 @@ const Template = ({title, desc1, desc2, image, formattype, setisLogedin}) => {
         </div>
 
         <div>
-            <img src="" alt="" />
+            <img src={image} alt="" />
         </div>
     </div>
   )

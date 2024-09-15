@@ -1,10 +1,28 @@
 import React, { useState } from 'react'
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
+import { Navigate, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 
-const SignupForm = () => {
-    const[showPassword,setShowPsssword] = useState(false)
+const SignupForm = ({setisLogedin}) => {
+    const Navigate = useNavigate();
+    const[showPassword1,setShowPassword1] = useState(false)
+    const[showPassword2,setShowPassword2] = useState(false)
     const[formData, setFormData] = useState({firstname:"", lastname:"", password:"", email:"",conformpassword:""})
+    function submitHandler (events){
+        events.preventDefault();
+        if(formData.conformpassword !== formData.password ){
+            toast.error('password and confirm password must be same');
+        }
+        if(formData.conformpassword === formData.password ){
+            toast.success('Account Created');
+            {
+                setisLogedin((prev)=> !prev)
+            }
+            Navigate('/dashboard')
+        }
+        
+    }
     const changeHandler = (event)=>{
         setFormData((prevData)=>
             (
@@ -18,10 +36,10 @@ const SignupForm = () => {
     <div>
         <div>
             <button>Student</button>
-            <button>Indtructer</button>
+            <button>Instructer</button>
         </div>
 
-        <form action="">
+        <form onSubmit={submitHandler} action='#'>
             <div>
             <label >
                 <p>First Name<sup>*</sup></p>
@@ -37,24 +55,24 @@ const SignupForm = () => {
             <div>
             <label >
                 <p>Email Id<sup>*</sup></p>
-                <input type='mail' required name='email' value={formData.email} onChange={changeHandler} placeholder='Enter email id' />
+                <input type='email' required name='email' value={formData.email} onChange={changeHandler} placeholder='Enter email id' />
             </label> 
             </div>
 
             <div>
             <label >
                 <p>Create Password<sup>*</sup></p>
-                <input type={showPassword ? 'text' : 'password'} required name='password' value={formData.password} onChange={changeHandler} placeholder='Enter your password' />
-                <span onClick={()=> setShowPsssword((prev)=> !prev)}>
-                    {showPassword ? (<AiOutlineEye />) : (<AiOutlineEyeInvisible />) }
+                <input type={showPassword1 ? 'text' : 'password'} required name='password' value={formData.password} onChange={changeHandler} placeholder='Enter your password' />
+                <span onClick={()=> setShowPassword1((prev)=> !prev)}>
+                    {showPassword1 ? (<AiOutlineEye />) : (<AiOutlineEyeInvisible />) }
                 </span> 
             </label>
 
             <label >
                 <p>Confirm Password<sup>*</sup></p>
-                <input type={showPassword ? 'text' : 'password'} required name='conformpassword' value={formData.conformpassword} onChange={changeHandler} placeholder='Enter your password again' />
-                <span onClick={()=> setShowPsssword((prev)=> !prev)}>
-                    {showPassword ? (<AiOutlineEye />) : (<AiOutlineEyeInvisible />) }
+                <input type={showPassword2 ? 'text' : 'password'} required name='conformpassword' value={formData.conformpassword} onChange={changeHandler} placeholder='Enter your password again' />
+                <span onClick={()=> setShowPassword2((prev)=> !prev)}>
+                    {showPassword2 ? (<AiOutlineEye />) : (<AiOutlineEyeInvisible />) }
                 </span> 
             </label>   
             </div>

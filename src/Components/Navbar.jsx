@@ -3,20 +3,20 @@ import weblogo from '../Components/logo.png'
 import { Link } from 'react-router-dom';
 import '../Style.css'
 
-const Navbar = ({isLogedin, setLogedin}) => {
+const Navbar = ({isLogedin, setisLogedin}) => {
 
     // let isLogedin = props.isLogedin;
     // let setLogedin = props.setLogedin
 
     const handleClick = () =>{
-        setLogedin((prev)=>!prev);
+        setisLogedin((prev)=>!prev);
     }
   return (
     <div className="navbar flex justify-between items-center w-full bg-neutral-700 h-[10vh]">
         
     <Link to='/' ><img src={weblogo} alt="logopng" style={{height:"70px", width:'250px', borderRadius:'45%',margin:'20px'  }} /></Link>
             
-        <nav className='flex'>
+        <nav className=' sm:flex hidden'>
         <ul className='flex gap-10 p-8 font-extrabold text-neutral-400'>
             <li>
                 <Link to='/' >Home</Link>
@@ -32,16 +32,16 @@ const Navbar = ({isLogedin, setLogedin}) => {
         
         <div className='m-10 w-[25vw] '>
             { !isLogedin &&
-                <Link to="/login"><button onClick={handleClick} className='border-4  border-b-orange-600 border-double bg-black text-white w-auto rounded-lg p-3 m-5'>Login</button ></Link>
+                <Link to="/login"><button  className='border-4  border-b-orange-600 border-double bg-black text-white w-auto rounded-lg p-3 m-5'>Login</button ></Link>
             }
             { !isLogedin &&
-                <Link to="/signup"><button onClick={handleClick} className='border-4  border-b-orange-600 border-double bg-black text-white w-auto rounded-lg p-3'>Signup</button></Link>
+                <Link to="/signup"><button  className='border-4  border-b-orange-600 border-double bg-black text-white w-auto rounded-lg p-3'>Signup</button></Link>
             }
             { isLogedin &&
                 <Link to="/"><button onClick={handleClick} className='border-4  border-b-orange-600 border-double bg-black text-white w-auto rounded-lg p-3 m-5'>Logout</button></Link>
             }
             { isLogedin &&
-                <Link to="/dashboard"><button onClick={handleClick} className='border-4  border-b-orange-600 border-double bg-black text-white w-auto rounded-lg p-3'>Dashboard</button></Link>
+                <Link to="/dashboard"><button  className='border-4  border-b-orange-600 border-double bg-black text-white w-auto rounded-lg p-3'>Dashboard</button></Link>
             }
         </div>
     </div>

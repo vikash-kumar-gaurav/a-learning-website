@@ -6,7 +6,7 @@ const Signup = ({setisLogedin}) => {
   return (
     <>
     <Template 
-      title="welcome Back"
+      title="Here you are , welcome"
       desc1="Build skills for today, tomorrow, and beyond"
       desc2="Education to future-proof your career."
       image={signupImg}
